@@ -1,0 +1,43 @@
+@import 'variables';
+
+.show-more {
+  margin: 16px;
+  position: relative;
+
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: $text-color;
+
+  transition: color .4s;
+
+  &:before {
+    content: '';
+    width: 24px;
+    height: 24px;
+
+    position: absolute;
+    left: -22px;
+
+    background-image: url('../img/icons/expand.svg');
+    transition: filter .4s;
+  }
+
+  &:hover,
+  &:active,
+	&:focus {
+    color: $color-main;
+
+    &:before {
+      filter: hue-rotate(120deg);
+    }
+  }
+
+  &--active {
+    &:before {
+      transform: rotate(180deg);
+    }
+  }
+}

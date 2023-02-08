@@ -1,0 +1,68 @@
+@import 'variables';
+
+.services {
+	&__slide {
+		margin-right: 16px;
+
+		&:nth-child(n + 4) {
+			@media (min-width: $tablet) and (max-width: $desktop) {
+				display: none;
+			}
+		}
+
+		&:nth-child(n + 5) {
+			@media (min-width: $desktop) {
+				display: none;
+			}
+		}
+	}
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 240px;
+    min-height: 160px;
+    padding: 16px;
+
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: $text-color;
+    text-decoration: none;
+
+    background-color: $background-color;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+		transition: border .4s;
+
+    @media (min-width: $tablet) {
+      margin-bottom: 16px;
+    }
+
+    &:hover {
+      border: 1px solid $border-color--hover;
+    }
+
+    &:focus,
+    &:active {
+      border: 1px solid $border-color--active;
+    }
+  }
+
+  &__icon {
+    align-self: flex-end;
+  }
+
+	&__show-more {
+		display: none;
+
+		@media (min-width: $tablet) {
+			display: block;
+			margin-top: 0;
+		}
+	}
+}

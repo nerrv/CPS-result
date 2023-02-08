@@ -1,0 +1,106 @@
+@import 'variables';
+
+button {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn {
+  margin-left: 16px;
+
+  &:nth-child(1) {
+    margin: 0;
+  }
+
+  &__text {
+    padding: 8px;
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: $text-color;
+  }
+}
+
+.icon {
+  transition: .4s;
+
+  &:hover {
+    opacity: .5;
+  }
+
+  &:active {
+    transform: scale(1.1);
+  }
+
+  &--hidden {
+    display: none;
+  }
+
+  @media (min-width: $tablet) {
+    display: flex;
+  }
+}
+
+.icons--hidden {
+  display: none;
+
+  @media (min-width: $tablet) {
+    display: flex;
+  }
+}
+
+.icon-more {
+  height: 40px;
+  width: 40px;
+
+  background: url('../img/icons/dropdown.svg') no-repeat 15px 12px;
+  border: 2px solid $color-main;
+  border-radius: 50%;
+
+  transition: 0.4s;
+}
+
+.next-btn {
+  min-height: 32px;
+  padding: 4px 38px 4px 20px;
+  align-self: flex-end;
+	position: relative;
+
+  background-color: $color-main;
+  border-radius: 16px;
+	transition: .4s;
+
+  &:after {
+    content: '';
+    width: 8px;
+    height: 10px;
+
+    position: absolute;
+    top: 11px;
+    right: 15px;
+
+    background: url('../img/icons/modal-dropdown.svg');
+  }
+
+	&:hover {
+    opacity: .5;
+  }
+
+  &:active {
+    transform: scale(1.1);
+  }
+
+  &__text {
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: -0.15px;
+    text-transform: uppercase;
+    color: $text-color--btn;
+  }
+}

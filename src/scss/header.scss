@@ -1,0 +1,48 @@
+@import 'variables';
+
+.header {
+	width: 100%;
+	min-width: 320px;
+	height: 88px;
+
+	position: fixed;
+	top: 0;
+	z-index: 2;
+	background-color: $background-color;
+
+	@media (min-width: $desktop) {
+		display: none;
+	}
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 18px 16px;
+		border-bottom: 1px solid $color-secondary--light;
+	}
+
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	&__section {
+		display: flex;
+		align-items: center;
+	}
+
+	&__divider {
+		width: 2px;
+		height: 32px;
+		margin-left: 16px;
+
+		background-color: $divider-color;
+		border-radius: 1px;
+	}
+
+	&__logo {
+		margin-left: 16px;
+	}
+}

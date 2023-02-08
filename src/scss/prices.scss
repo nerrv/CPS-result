@@ -1,0 +1,230 @@
+@import 'variables';
+
+.prices {
+	&__slider {
+		@media (min-width: $tablet) {
+			flex-direction: column;
+			width: 100%;
+			margin-top: 63px;
+
+			border: 1px solid $border-color;
+			border-radius: 6px;
+		}
+	}
+
+  &__info {
+    margin-top: 16px;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: $text-color;
+
+    @media (min-width: $tablet) {
+      max-width: 420px;
+      margin-top: 24px;
+    }
+
+    @media (min-width: $desktop) {
+      margin-top: 32px;
+    }
+  }
+
+  &__link {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 50px;
+
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: $text-color;
+    text-decoration: none;
+
+    position: relative;
+    transition: color .4s;
+
+    &:after {
+      content: '';
+      width: 6px;
+      height: 10px;
+      margin-left: 9px;
+
+      position: absolute;
+      bottom: 7px;
+
+      background: url('../img/icons/more.svg') no-repeat;
+    }
+
+    &:hover {
+      color: $text-color--muted;
+    }
+
+    &:active,
+    &:focus {
+      color: $text-color--active;
+    }
+  }
+}
+
+.price-card {
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: 1fr 120px;
+	grid-template-areas:
+		'service service'
+		'price price'
+		'time btn';
+
+  min-width: 260px;
+  min-height: 200px;
+	margin-right: 16px;
+  padding: 16px;
+
+  background-color: $background-color;
+	border: 1px solid $border-color;
+  border-radius: 6px;
+
+	position: relative;
+
+  @media (min-width: $tablet) {
+    display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+    width: 100%;
+    min-width: 720px;
+    min-height: 64px;
+
+    border: none;
+		border-radius: 0;
+  }
+
+	&:first-child {
+		.price-card__text {
+			&--service {
+				&:before {
+					@media (min-width: $tablet) {
+						content: 'Ремонтные услуги';
+						position: absolute;
+						bottom: 80px;
+					}
+				}
+			}
+
+			&--price {
+				&:before {
+					@media (min-width: $tablet) {
+						content: 'Цена';
+						position: absolute;
+						bottom: 80px;
+					}
+				}
+			}
+
+			&--time {
+				&:before {
+					@media (min-width: $tablet) {
+						content: 'Срок';
+						position: absolute;
+						bottom: 80px;
+					}
+				}
+			}
+		}
+	}
+
+	&:not(:last-child):after {
+		@media (min-width: $tablet) {
+			content: '';
+			width: calc(100% - 32px);
+			height: 1px;
+
+			position: absolute;
+			bottom: 0;
+			left: 16px;
+			right: 16px;
+
+			background-color: $divider-color;
+		}
+	}
+
+  &__text {
+    margin: 0;
+    margin-top: 16px;
+
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: $text-color;
+
+    @media (min-width: $tablet) {
+      margin: 0;
+    }
+
+    &:first-child {
+			margin: 0;
+    }
+
+    &--service {
+			grid-area: service;
+
+			@media (min-width: $tablet) {
+        width: 48%;
+      }
+
+      &:before {
+        content: 'Ремонтные услуги';
+      }
+    }
+
+    &--price {
+			grid-area: price;
+
+			@media (min-width: $tablet) {
+        width: 10%;
+      }
+
+      &:before {
+        content: 'Цена';
+      }
+    }
+
+    &--time {
+			grid-area: time;
+
+			@media (min-width: $tablet) {
+        width: 12%;
+      }
+
+      &:before {
+        content: 'Срок';
+      }
+    }
+
+    &:before {
+      display: block;
+      margin-bottom: 4px;
+
+      font-family: $font-family;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      color: $text-color--muted;
+
+      @media (min-width: $tablet) {
+        content: '';
+      }
+    }
+  }
+
+	&__btn {
+		grid-area: btn;
+	}
+}

@@ -1,0 +1,17 @@
+.overlay {
+  visibility: hidden;
+  position: fixed;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+
+  &--shown {
+		visibility: visible;
+		z-index: 2;
+		background-color: rgba(255, 255, 255, .9);
+
+		@media (min-width: $desktop) {
+      z-index: 3;
+    }
+	}
+}

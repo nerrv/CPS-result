@@ -1,0 +1,26 @@
+@import 'variables';
+
+.swiper-wrapper {
+  display: flex;
+	padding-bottom: 40px;
+  box-sizing: border-box;
+
+  @media (min-width: $tablet) {
+    flex-wrap: wrap;
+		padding-bottom: 0;
+  }
+
+	.swiper-slide {
+		&--open {
+			display: flex;
+		}
+	}
+}
+
+.swiper-slide {
+	width: 240px;
+}
+
+.swiper-pagination-bullet {
+	background: $gray--dark;
+}

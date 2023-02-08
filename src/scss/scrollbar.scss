@@ -1,0 +1,10 @@
+.burger-menu::-webkit-scrollbar,
+.main-menu__list::-webkit-scrollbar {
+  display: none;
+}
+
+.burger-menu,
+.main-menu__list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
